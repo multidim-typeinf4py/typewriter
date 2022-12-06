@@ -42,18 +42,18 @@ class BaseEmbedder:
 
         w2v_model = Word2Vec(min_count=5,
                              window=5,
-                             size=W2V_VEC_LENGTH,
+                             vector_size=W2V_VEC_LENGTH,
                              workers=cores-1)
 
         t = time()
 
-        w2v_model.build_vocab(sentences=corpus_iterator)
+        w2v_model.build_vocab(corpus_iterator)
 
         print('Time to build vocab: {} mins'.format(round((time() - t) / 60, 2)))
 
         t = time()
 
-        w2v_model.train(sentences=corpus_iterator,
+        w2v_model.train(corpus_iterator,
                         total_examples=w2v_model.corpus_count,
                         epochs=20,
                         report_delay=1)
