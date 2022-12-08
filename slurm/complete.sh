@@ -10,7 +10,6 @@
 
 ## Resources - Serial execution, with max 8 cores per task
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=8
 #SBATCH --gres=gpu:1
 #SBATCH --time=12:00:00
 
