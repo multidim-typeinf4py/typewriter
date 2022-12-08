@@ -3,6 +3,7 @@
 # This notebook runs the TypeWriter method for predicting types of Python methods. 
 
 # %%
+import json
 from typewriter import config_TW
 from os.path import join, exists, isdir
 import os
@@ -38,9 +39,20 @@ from gh_query import load_json, gen_json_file, find_current_repos
 # Here, we only select Python projects that has `mypy` as one of its dependencies
 
 # %%
-repos = load_json('./data/mypy-dependents-by-stars.json')
+# repos = load_json('./data/mypy-dependents-by-stars.json')
  
-gen_json_file('./data/py_projects_all.json', repos, find_current_repos('./data/paper-dataset/Repos', True))
+repo_dir = "./data/paper-dataset/Repos"
+repos_on_disk = find_current_repos(repo_dir, author_repo=True)
+print(f"{len(repos_on_disk)} repositories in {repo_dir}")
+# gen_json_file('./data/py_projects_all.json', repos, repos_on_disk)
+
+repo_json = list()
+for repo_on_disk in repos_on_disk:
+    author, repo = repo_on_disk.split("/")
+    repo_json.append({"author": author, "repo": repo})
+with open('./data/py_projects_all.json', "w") as f:
+    json.dump(repo_json, f)
+
 
 # %% [markdown]
 # Loads selected repos
