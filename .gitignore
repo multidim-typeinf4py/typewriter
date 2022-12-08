@@ -1,6 +1,7 @@
 __pycache__
 .DS_Store
 .idea
-data/
+data/paper-dataset/Repos
 dataset/
+
 .vscode/
