@@ -10,7 +10,7 @@
 
 ## Resources - Serial execution
 #SBATCH --ntasks=1
-#SBATCH --time=1:00:00
+#SBATCH --time=4:00:00
 
 (cd data/paper-dataset; sh cloner.sh)
 
