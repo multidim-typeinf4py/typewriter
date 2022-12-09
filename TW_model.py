@@ -171,7 +171,7 @@ if __name__ == '__main__':
             print("Mean f1_score:", mean(f1_score_top_n))
             
             # Saving the model ###############################################################################################
-            torch.save(model, join(TW_MODEL_FILES, 'tw_pretrained_model_%s.pt' % d))
+            torch.save(model.module.state_dict(), join(TW_MODEL_FILES, 'tw_pretrained_model_%s.pt' % d))
             print("Saved the neural model of TyperWriter at:\n%s" % abspath(join(TW_MODEL_FILES, 'tw_pretrained_model_%s.pt' % d)))
             ##################################################################################################################
 
