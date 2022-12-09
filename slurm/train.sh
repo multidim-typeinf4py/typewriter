@@ -8,9 +8,13 @@
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=benjamin.sparks@stud.uni-heidelberg.de
 
-## Resources - Serial execution, with max 8 cores per task
+## Execution Resources - Serial execution
 #SBATCH --ntasks=1
 #SBATCH --gres=gpu:1
+
+
+## Time & Space Resources
+#SBATCH --mem=128000
 #SBATCH --time=4:00:00
 
 
