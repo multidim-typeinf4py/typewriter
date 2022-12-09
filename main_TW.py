@@ -110,7 +110,7 @@ config_TW.create_dirs(dirs)
 # %%
 from dltpy.preprocessing.pipeline import Pipeline
 p = Pipeline('./data/paper-dataset/Repos/', OUTPUT_DIRECTORY_TW, AVAILABLE_TYPES_DIR)
-p.run_pipeline_manual(repos, 10)
+p.run_pipeline_manual(repos, 28)
 
 # %% [markdown]
 # Generates dataframe or loads an existing one
