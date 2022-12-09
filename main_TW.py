@@ -42,7 +42,7 @@ from gh_query import load_json, gen_json_file, find_current_repos
 # repos = load_json('./data/mypy-dependents-by-stars.json')
  
 repo_dir = "./data/paper-dataset/Repos"
-repos_on_disk = find_current_repos(repo_dir, author_repo=False)
+repos_on_disk = find_current_repos(repo_dir, author_repo=True)
 print(f"{len(repos_on_disk)} repositories in {repo_dir}")
 # gen_json_file('./data/py_projects_all.json', repos, repos_on_disk)
 
