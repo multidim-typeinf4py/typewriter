@@ -10,6 +10,7 @@ This is the main script for using TypeWriter approach which does the following s
 """
 
 
+import json
 from os.path import join, exists, isdir
 from sklearn.model_selection import train_test_split
 from gh_query import load_json, gen_json_file, find_current_repos
@@ -107,7 +108,16 @@ if __name__ == '__main__':
     if not (CACHE_TW and exists(SELECTED_PROJECTS_DIR)):
         print("Selecting Python projects.....")
         repos = load_json('./data/mypy-dependents-by-stars.json')
-        gen_json_file(SELECTED_PROJECTS_DIR, repos, find_current_repos(DATASET_DIR, True))
+
+        repos_on_disk = find_current_repos(DATASET_DIR, True)
+        print(f"{len(repos_on_disk)} repositories in {DATASET_DIR}")
+
+        repo_json = list()
+        for repo_on_disk in repos_on_disk:
+            author, repo = repo_on_disk.split("/")
+            repo_json.append({"author": author, "repo": repo})
+        with open(SELECTED_PROJECTS_DIR, "w") as f:
+            json.dump(repo_json, f)
 
     repos = load_json(SELECTED_PROJECTS_DIR)
     print("Number of selected Python projects:", len(repos))
