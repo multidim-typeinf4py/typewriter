@@ -12,3 +12,5 @@ pandas
 gensim
 torch
 asttokens
+tensorboard
+matplotlib
