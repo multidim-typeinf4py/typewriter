@@ -272,9 +272,9 @@ if __name__ == '__main__':
     print("W2V token model total amount of words : " + str(w2v_token_model.corpus_total_words))
     print("W2V comments model total amount of words : " + str(w2v_comments_model.corpus_total_words))
     print("\n Top 20 words for token model:")
-    print(w2v_token_model.wv.index2entity[:20])
+    print(w2v_token_model.wv.index_to_key[:20])
     print("\n Top 20 words for comments model:")
-    print(w2v_comments_model.wv.index2entity[:20])
+    print(w2v_comments_model.wv.index_to_key[:20])
     ##################################################################################################################
 
     # Vector Representation ##########################################################################################
