@@ -14,7 +14,7 @@
 
 
 ## Time & Space Resources
-#SBATCH --mem=128000
+#SBATCH --mem=64GB
 #SBATCH --time=4:00:00
 
 source .venv/bin/activate
