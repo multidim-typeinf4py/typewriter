@@ -164,21 +164,18 @@ if __name__ == '__main__':
             idx = (y_true != idx_of_other) & (y_pred[:, 0] != idx_of_other)
             f1_score_top_n = []
             for top_n in top_n_pred:
-                filename = f"{model.module.__class__.__name__ if torch.cuda.device_count() > 1 else model.module.__class__.__name__}_{d}_{i}_{top_n}"
+                filename = f"{model.module.__class__.__name__}_{d}_{i}_{top_n}"
                 report_TW(y_true, y_pred, top_n, f"{filename}_unfiltered_{res_time}", RESULTS_DIR, params_dict)
                 report = report_TW(y_true[idx], y_pred[idx], top_n, f"{filename}_filtered_{res_time}", RESULTS_DIR, params_dict)
                 f1_score_top_n.append(report['result']['macro avg']['f1-score'])
             print("Mean f1_score:", mean(f1_score_top_n))
             
             # Saving the model ###############################################################################################
-            torch.save(model if torch.cuda.device_count() > 1 else model, join(TW_MODEL_FILES, 'tw_pretrained_model_%s.pt' % d))
+            torch.save(model, join(TW_MODEL_FILES, 'tw_pretrained_model_%s.pt' % d))
             print("Saved the neural model of TyperWriter at:\n%s" % abspath(join(TW_MODEL_FILES, 'tw_pretrained_model_%s.pt' % d)))
             ##################################################################################################################
 
-            if torch.cuda.device_count() > 1:
-                model.module.reset_model_parameters()
-            else:
-                model.module.reset_model_parameters()
+            model.module.reset_model_parameters()
     ##################################################################################################################
 
     # Prediction Results ############################################################################################
