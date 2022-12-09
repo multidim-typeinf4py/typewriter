@@ -11,6 +11,7 @@
 ## Resources - Serial execution
 #SBATCH --ntasks=1
 #SBATCH --mem=32000
+#SBATCH --cpus-per-task 20
 #SBATCH --time=4:00:00
 
 (cd data/paper-dataset; sh cloner.sh)
@@ -23,5 +24,5 @@ pip install -r requirements.txt
 python TW_extractor.py \
     --o dataset \
     --d data/paper-dataset/Repos \
-    --w 10 \
+    --w 20 \
     --c 0
