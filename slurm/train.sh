@@ -17,10 +17,7 @@
 #SBATCH --mem=128000
 #SBATCH --time=4:00:00
 
-
-
-
 source .venv/bin/activate
 pip install -r requirements.txt
 
-python main_TW.py
+python TW_model.py --o dataset
