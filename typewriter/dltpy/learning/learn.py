@@ -11,7 +11,7 @@ from torch.utils import data
 from torch.utils.data import DataLoader
 from typing import Tuple
 
-from dltpy import config
+from typewriter.dltpy import config
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

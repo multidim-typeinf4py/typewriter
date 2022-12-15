@@ -1,7 +1,7 @@
 import os
 import shutil
 import unittest
-from preprocessing.cloner import Cloner
+from typewriter.dltpy.preprocessing.cloner import Cloner
 
 
 class TestCloner(unittest.TestCase):

@@ -1,5 +1,5 @@
 import unittest
-from preprocessing.extractor import Extractor, Function
+from typewriter.dltpy.preprocessing.extractor import Extractor, Function
 
 
 class TestExtractor(unittest.TestCase):

@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 from functools import reduce
 from typing import Optional
 
-from dltpy.preprocessing.extractor import Function
+from typewriter.dltpy.preprocessing.extractor import Function
 import re
 import nltk
 

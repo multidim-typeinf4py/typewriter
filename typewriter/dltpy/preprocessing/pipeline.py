@@ -7,12 +7,12 @@ import traceback
 import pandas as pd
 from joblib import delayed
 
-from dltpy.preprocessing.cloner import Cloner
-from dltpy.preprocessing.extractor import Extractor, ParseError
-from dltpy.preprocessing.nl_preprocessing import NLPreprocessor
-from dltpy.preprocessing.project_filter import ProjectFilter
-from dltpy.preprocessing.utils import ParallelExecutor
-from dltpy import config
+from typewriter.dltpy.preprocessing.cloner import Cloner
+from typewriter.dltpy.preprocessing.extractor import Extractor, ParseError
+from typewriter.dltpy.preprocessing.nl_preprocessing import NLPreprocessor
+from typewriter.dltpy.preprocessing.project_filter import ProjectFilter
+from typewriter.dltpy.preprocessing.utils import ParallelExecutor
+from typewriter.dltpy import config
 
 cloner = Cloner()
 project_filter = ProjectFilter()

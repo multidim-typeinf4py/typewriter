@@ -2,7 +2,7 @@ import unittest
 import tempfile
 from os import path
 
-from preprocessing.project_filter import ProjectFilter
+from typewriter.dltpy.preprocessing.project_filter import ProjectFilter
 
 
 class TestCloner(unittest.TestCase):

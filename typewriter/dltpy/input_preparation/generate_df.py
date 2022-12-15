@@ -14,7 +14,7 @@ from sklearn.preprocessing import LabelEncoder
 from ast import literal_eval
 
 # LOCAL CONFIG
-from dltpy import config
+from typewriter.dltpy import config
 
 if not os.path.exists(config.ML_INPUTS_PATH):
     os.makedirs(config.ML_INPUTS_PATH)

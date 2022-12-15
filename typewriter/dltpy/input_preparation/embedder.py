@@ -3,7 +3,7 @@ import pandas as pd
 import multiprocessing
 import os
 from time import time
-from dltpy import config
+from typewriter.dltpy import config
 
 if not os.path.isdir(config.OUTPUT_EMBEDDINGS_DIRECTORY):
     os.mkdir(config.OUTPUT_EMBEDDINGS_DIRECTORY)

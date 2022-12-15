@@ -1,6 +1,6 @@
 import unittest
-from preprocessing.extractor import Function
-from preprocessing.nl_preprocessing import NLPreprocessor
+from typewriter.dltpy.preprocessing.extractor import Function
+from typewriter.dltpy.preprocessing.nl_preprocessing import NLPreprocessor
 
 
 class TestExtractor(unittest.TestCase):

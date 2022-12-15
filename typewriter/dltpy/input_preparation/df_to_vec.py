@@ -8,7 +8,7 @@ import os
 
 from pandas import Series
 
-from dltpy import config
+from typewriter.dltpy import config
 
 # Create a path for DLTPy
 if not os.path.isdir(config.VECTOR_OUTPUT_DIRECTORY):

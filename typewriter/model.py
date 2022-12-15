@@ -2,7 +2,7 @@
 This module contains the neural model of TypeWriter
 """
 
-from dltpy.learning.learn import top_n_fix, store_json
+from typewriter.dltpy.learning.learn import top_n_fix, store_json
 from sklearn.metrics import classification_report
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter

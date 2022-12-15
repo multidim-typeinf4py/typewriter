@@ -4,7 +4,7 @@ This module contains embeddings and vector representations for TypeWriter
 
 from gensim.models import Word2Vec
 from typewriter.config_TW import W2V_VEC_LENGTH, AVAILABLE_TYPES_NUMBER
-from dltpy.input_preparation.df_to_vec import vectorize_string
+from typewriter.dltpy.input_preparation.df_to_vec import vectorize_string
 from time import time
 from os.path import isdir, join, exists
 from os import mkdir
