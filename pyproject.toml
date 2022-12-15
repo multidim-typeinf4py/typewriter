@@ -2,11 +2,11 @@
 name = "typewriter"
 version = "0.1.0"
 description = "Prob.Inf via TypeWriter"
-authors = ["Your Name <you@example.com>"]
+authors = []
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 GitPython = "^3.1.29"
 tqdm = "^4.64.1"
 joblib = "^1.2.0"
@@ -25,6 +25,9 @@ tensorboard = "^2.11.0"
 matplotlib = "^3.6.2"
 ray = "^2.2.0"
 
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^0.991"
 
 [build-system]
 requires = ["poetry-core"]
