@@ -6,10 +6,6 @@ from typewriter.dltpy.preprocessing.extractor import Function
 import re
 import nltk
 
-nltk.download('averaged_perceptron_tagger')
-nltk.download('stopwords')
-nltk.download('wordnet')
-
 # Precompile often used regex
 first_cap_regex = re.compile('(.)([A-Z][a-z]+)')
 all_cap_regex = re.compile('([a-z0-9])([A-Z])')

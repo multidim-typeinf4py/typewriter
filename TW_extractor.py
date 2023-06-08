@@ -33,6 +33,7 @@ import numpy as np
 import re
 import pickle
 import time
+import nltk
 
 
 def print_dataset_stats(df: pd.DataFrame):
@@ -46,6 +47,9 @@ def print_dataset_stats(df: pd.DataFrame):
 
 
 if __name__ == '__main__':
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('stopwords')
+    nltk.download('wordnet')
 
     parser = argparse.ArgumentParser(description="A script for using TypeWriter approach")
     parser.add_argument("--o", required=True, type=str, help="The name of an output folder which will be created automatically")
